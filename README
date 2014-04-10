@@ -1,1 +1,24 @@
-This file was created by IntelliJ IDEA 12.1.6 for binding GitHub repository
+ This one is simple console application which schedules a job during startup
+ and print out job state to console output and logfile.
+
+ == Building
+ Just a maven build:
+ mvn package
+
+ that produces a zipped distribution with required classes and dependencies.
+
+  == Usage
+
+  1. Unpack distribution zip into working directory.
+  2. Start as console application:
+  java -jar scheduler-1.0-SNAPSHOT.jar -s "0 0/3 * * * ?" -maxLoadObjects 10
+
+  Here`s some parameters:
+
+  1. -s is required, it`s a cron expression to schedule a job, in example job will
+    started every 3 minutes.
+  2. --maxLoadObjects is optional, it means a maximum number of dummy objects simulating
+    real Loader.
+
+
+
